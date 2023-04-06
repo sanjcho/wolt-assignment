@@ -1,10 +1,14 @@
-import { Colors, ESize, Title } from "@DesignSystem";
-import Ionicons from "@expo/vector-icons/Ionicons";
-import { StatusBar } from "expo-status-bar";
+import { DayRow } from "@Screens/Main/components/DayRow";
+import { Header } from "@Screens/Main/components/Header";
 import React from "react";
+import { ScrollView } from "react-native";
 
 import { useInitialize } from "./hooks/useInitialize";
-import { Container } from "./styles";
+import {
+  BodyContainer,
+  PlatformSafeAreaView,
+  SafeAreaContainer,
+} from "./styles";
 
 export const Main = () => {
   const { appReady } = useInitialize();
@@ -12,10 +16,25 @@ export const Main = () => {
     return null;
   }
   return (
-    <Container>
-      <Title>Open up App.js to start working on your app!1111</Title>
-      <Ionicons name={"time"} color={Colors.Grey3} size={ESize.s24} />
-      <StatusBar style="auto" />
-    </Container>
+    <SafeAreaContainer>
+      <PlatformSafeAreaView>
+        <ScrollView>
+          <BodyContainer>
+            <Header />
+            <DayRow dayName={"Monday"} workingHours={"10 AM - 6 PM"} />
+            <DayRow dayName={"Tuesday"} workingHours={null} />
+            <DayRow dayName={"Wednesday"} workingHours={"10 AM - 6 PM"} />
+            <DayRow
+              dayName={"Thursday"}
+              label={"TODAY"}
+              workingHours={"12 AM - 10 PM"}
+            />
+            <DayRow dayName={"Friday"} workingHours={"10 AM - 6 PM"} />
+            <DayRow dayName={"Saturday"} workingHours={"10 AM - 6 PM"} />
+            <DayRow dayName={"Sunday"} workingHours={"10 AM - 6 PM"} />
+          </BodyContainer>
+        </ScrollView>
+      </PlatformSafeAreaView>
+    </SafeAreaContainer>
   );
 };
