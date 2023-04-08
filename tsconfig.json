@@ -28,7 +28,7 @@
       "^@DesignSystem": ["/src/DesignSystem/index.ts"],
       "^@Screens/*": ["/src/Screens/*"],
       "^@Assets/*": ["/assets/*"],
-      "^@Lib/*": ["/src/Lib/*"]
+      "^@Lib/*": ["/src/Lib/index.ts"]
     }
   },
   "include": ["./src/**/*", "./App.tsx"],
