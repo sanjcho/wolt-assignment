@@ -1,4 +1,5 @@
 import { initScheduleModule } from "@Modules/Schedule/scheduleModule";
+import { ErrorBoundary } from "@Presentation/Main/components/ErrorBoundary";
 import React from "react";
 
 import { useInitialize } from "./hooks/useInitialize";
@@ -18,7 +19,9 @@ export const Main = () => {
   return (
     <Container>
       <PlatformSafeAreaView>
-        <Presentation.Schedule model={Schedule} />
+        <ErrorBoundary>
+          <Presentation.Schedule model={Schedule} />
+        </ErrorBoundary>
       </PlatformSafeAreaView>
     </Container>
   );
