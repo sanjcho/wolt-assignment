@@ -1,22 +1,14 @@
 import {
   Colors,
   ERound,
-  ESpace,
   EShadow,
+  ESize,
+  ESpace,
   makeShadow,
+  SCREEN_HEIGHT,
   SCREEN_WIDTH,
 } from "@DesignSystem";
-import { Platform, SafeAreaView as RNSafeAreaView } from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
 import styled from "styled-components/native";
-
-export const PlatformSafeAreaView =
-  Platform.OS === "android" ? SafeAreaView : RNSafeAreaView;
-export const SafeAreaContainer = styled.View({
-  flex: 1,
-  backgroundColor: Colors.Grey2,
-  alignItems: "center",
-});
 
 const TARGET_HORIZONTAL_SPACE = ESpace.s8;
 const MIN_HORIZONTAL_SPACE = ESpace.s2;
@@ -34,4 +26,25 @@ export const BodyContainer = styled.View({
   marginHorizontal,
   marginVertical: ESpace.s8,
   ...makeShadow(EShadow.S),
+});
+
+export const InputContainer = styled.View<{ isInputValid: boolean }>(
+  ({ isInputValid }) => ({
+    width,
+    padding: ESpace.s12,
+    backgroundColor: Colors.White,
+    borderRadius: ERound.r16,
+    borderColor: isInputValid ? Colors.Transparent : Colors.Danger,
+    borderWidth: 1,
+    marginHorizontal,
+    marginVertical: ESpace.s8,
+    ...makeShadow(EShadow.S),
+  })
+);
+
+export const ScrollContainer = styled.ScrollView.attrs({
+  contentContainerStyle: { alignItems: "center", minHeight: SCREEN_HEIGHT },
+  contentOffset: { y: ESize.s60, x: 0 },
+})({
+  width: SCREEN_WIDTH,
 });

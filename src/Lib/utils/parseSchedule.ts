@@ -22,7 +22,10 @@ export const DAYS_OF_WEEK: DaysOfWeek[] = [
 ];
 
 export type Schedule = Record<(typeof DAYS_OF_WEEK)[number], DayNode[]>;
-type Result = Record<(typeof DAYS_OF_WEEK)[number], string[] | undefined>;
+export type ScheduleResult = Record<
+  (typeof DAYS_OF_WEEK)[number],
+  string[] | undefined
+>;
 const MS_IN_SEC = 1000;
 const makeAmPmFormat = (time: number) =>
   new Date(time * MS_IN_SEC).toLocaleString("en-US", {
@@ -48,7 +51,7 @@ const validateNextNode = (
 };
 
 export const parseSchedule = (rawData: Schedule) => {
-  const result: Result = {
+  const result: ScheduleResult = {
     monday: undefined,
     tuesday: undefined,
     wednesday: undefined,

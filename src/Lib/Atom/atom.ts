@@ -1,4 +1,4 @@
-import { Atom, Listener } from "@Lib/Atom/types";
+import { Atom, Listener } from "@Lib";
 
 export const atom = <S>(initialState: S): Atom<S> => {
   let value = initialState;

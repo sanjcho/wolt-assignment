@@ -1,10 +1,12 @@
-import { parseSchedule, DAYS_OF_WEEK, capitalize } from "@Lib";
+import { capitalize, DAYS_OF_WEEK, ScheduleResult } from "@Lib";
 import React from "react";
 
 import { DayRow } from "./DayRow";
 
-export const Body = () => {
-  const data = parseSchedule(require("../../../../data.json"));
+type Props = {
+  data: ScheduleResult;
+};
+const _Body: React.FC<Props> = ({ data }) => {
   const currentDayNumber = new Date().getDay();
 
   return (
@@ -20,3 +22,5 @@ export const Body = () => {
     </>
   );
 };
+
+export const Body = React.memo(_Body);

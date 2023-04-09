@@ -9,8 +9,10 @@ module.exports = function (api) {
           alias: {
             "@DesignSystem": "./src/DesignSystem/index.ts",
             "@Lib": "./src/Lib/index.ts",
-            "^@Screens/(.+)": "./src/Screens/\\1",
+            "^@Presentation/(.+)": "./src/Presentation/\\1",
+            "^@Modules/(.+)": "./src/Modules/\\1",
             "^@Assets/(.+)": "./assets/\\1",
+            "^@Types/(.+)": "./src/Types/\\1",
           },
           extensions: [".js", ".jsx", ".ts", ".tsx"],
         },

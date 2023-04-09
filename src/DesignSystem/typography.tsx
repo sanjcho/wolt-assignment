@@ -40,3 +40,10 @@ export enum ELineHeight {
   lh22 = 22,
   lh16 = 16,
 }
+
+export const Input = styled.TextInput({
+  fontFamily: "Roboto-Regular",
+  fontSize: 16,
+  lineHeight: 22,
+  color: Colors.Black,
+});

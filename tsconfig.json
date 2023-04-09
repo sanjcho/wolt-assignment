@@ -26,9 +26,11 @@
     "paths": {
       "@*": ["./src/*"],
       "^@DesignSystem": ["/src/DesignSystem/index.ts"],
-      "^@Screens/*": ["/src/Screens/*"],
+      "^@Presentation/*": ["/src/Presentation/*"],
+      "^@Modules/*": ["/src/Modules/*"],
       "^@Assets/*": ["/assets/*"],
-      "^@Lib/*": ["/src/Lib/index.ts"]
+      "^@Types/*": ["/src/Types/*"],
+      "@Lib/*": ["/src/Lib/index.ts"]
     }
   },
   "include": ["./src/**/*", "./App.tsx"],

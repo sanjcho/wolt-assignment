@@ -1,4 +1,4 @@
-import { Main } from "@Screens/Main";
+import { Main } from "@Presentation/Main";
 import React from "react";
 
 export default function App() {

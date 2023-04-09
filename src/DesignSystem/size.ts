@@ -6,6 +6,8 @@ export enum ESize {
   s28 = 28,
   s32 = 32,
   s36 = 36,
+  s48 = 48,
+  s60 = 60,
 }
 
 export enum ESpace {
